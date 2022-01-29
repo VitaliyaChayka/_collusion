@@ -34,7 +34,12 @@ btnClose.addEventListener('click', function(){
 initSearchForm();
 
 // ////////////////////////////////// icon scrollup
+let wHeight = window.innerHeight;
+window.addEventListener('resize', function(){
+    wHeight = window.innerHeight;
+})
 
+function scrollUp(){
 let upBtn = document.getElementById ('scrollup');
 window.addEventListener('scroll', function(){
     if (wHeight < window.scrollY){
@@ -46,16 +51,25 @@ window.addEventListener('scroll', function(){
     }
 })
 
-let wHeight = window.innerHeight;
-window.addEventListener('resize', function(){
-    wHeight = window.innerHeight;
+upBtn.addEventListener("click", function(){
+    window.scrollTo({
+        top:0,
+        behavior: "smooth"
+    })
 })
 
+}
+scrollUp();
+
+
+///////////////////////
+
+function windowScroll(){
 let sectionHight = 0
 for (let link of document.getElementsByClassName('nav__link')){
     link.addEventListener('click', function(e){
         e.preventDefault();
-        let id_section = this.getAttribute('href') //#section
+        let id_section = this.getAttribute('href') 
         let pos = document.querySelector(id_section).getBoundingClientRect();
         window.scrollTo({
         top: document.querySelector(id_section).offsetTop - 110,
@@ -64,3 +78,5 @@ for (let link of document.getElementsByClassName('nav__link')){
     });
     })
 }
+}
+windowScroll();
