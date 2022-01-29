@@ -47,7 +47,6 @@ window.addEventListener('scroll', function(){
     }
     else {
         upBtn.classList.remove('scrollup_active')
-
     }
 })
 
@@ -80,3 +79,20 @@ for (let link of document.getElementsByClassName('nav__link')){
 }
 }
 windowScroll();
+
+/////////////////////////
+
+function activeScrollLink() {
+    for (let link of document.getElementsByClassName('nav__link')) {
+       let id_section = link.getAttribute('href');
+       window.addEventListener('scroll', function () {
+          let pos = document.querySelector(id_section).getBoundingClientRect();
+          if (pos.top < wHeight / 2 && pos.top > pos.height * -1 + wHeight / 2) {
+             link.classList.add('link__active')
+          } else {
+             link.classList.remove('link__active')
+          }
+       })
+    }
+ }
+activeScrollLink();

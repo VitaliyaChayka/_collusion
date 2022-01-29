@@ -1142,7 +1142,6 @@ a svg.social__icon:hover {
 
 #scrollup {
    position: fixed;
-   color: #514f58;
    background-color: transparent;
    right: 20px;
    bottom: 20px;
@@ -1173,4 +1172,10 @@ a svg.social__icon:hover {
 .icon-cheveron-outline-up {
    fill: $colorMain;
 
+}
+
+///////////
+
+.nav__link.link__active {
+   text-shadow: 1px 0px 2px $colorMain;
 }
