@@ -1,20 +1,37 @@
+'use strict'
+
 ///////////burger///////
 
-$(document).ready(function(){
-   $('.header__burger').click(function(event){
-     $('.header__burger, .nav').toggleClass('active');
-     $('body').toggleClass('lock');
-   });
- });
+// $(document).ready(function(){
+//    $('.header__burger').click(function(event){
+//      $('.header__burger, .nav').toggleClass('active');
+//      $('body').toggleClass('lock');
+//    });
+//  });
 
 
- $(document).ready(function() {
-    $('.nav__link').click(function(event) {
-        $('.header__burger, .nav').removeClass('active');
-        $('body').removeClass('lock');
-    });
-});
+//  $(document).ready(function() {
+//     $('.nav__link').click(function(event) {
+//         $('.header__burger, .nav').removeClass('active');
+//         $('body').removeClass('lock');
+//     });
+// });
+///////////////////
 
+let burger = document.querySelector('.header__burger');
+let nav = document.querySelector('.nav');
+let body = document.getElementsByTagName('body');
+
+burger.addEventListener('click', function(){
+    burger.classList.toggle('active');
+    nav.classList.toggle('active');
+    body.classList.toggle('lock');
+})
+
+nav.addEventListener('click', function(){
+    burger.classList.remove('active');
+    nav.classList.remove('active');
+ })
 
 /////////////////
 function initSearchForm(){
@@ -50,10 +67,11 @@ window.addEventListener('scroll', function(){
     }
 })
 
-upBtn.addEventListener("click", function(){
+upBtn.addEventListener('click', function(){
     window.scrollTo({
-        top:0,
-        behavior: "smooth"
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
     })
 })
 
@@ -71,7 +89,7 @@ for (let link of document.getElementsByClassName('nav__link')){
         let id_section = this.getAttribute('href') 
         let pos = document.querySelector(id_section).getBoundingClientRect();
         window.scrollTo({
-        top: document.querySelector(id_section).offsetTop - 110,
+        top: document.querySelector(id_section).offsetTop - 80,
         left: 0,
         behavior: 'smooth'
     });
