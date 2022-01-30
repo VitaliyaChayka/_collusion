@@ -912,10 +912,14 @@ button {
    }
 }
 
+.social a {
+   margin: 5px;
+}
+
 a svg.social__icon {
    width: 20px;
    height: 20px;
-   margin: 5px;
+
 }
 
 a svg.social__icon:hover {

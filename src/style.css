@@ -1062,10 +1062,13 @@ button {
   margin: 0 0 9px 0;
 }
 
+.social a {
+  margin: 5px;
+}
+
 a svg.social__icon {
   width: 20px;
   height: 20px;
-  margin: 5px;
 }
 
 a svg.social__icon:hover {
