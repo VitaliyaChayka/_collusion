@@ -25,12 +25,13 @@ let body = document.getElementsByTagName('body');
 burger.addEventListener('click', function(){
     burger.classList.toggle('active');
     nav.classList.toggle('active');
-    body.classList.toggle('lock');
+
 })
 
 nav.addEventListener('click', function(){
     burger.classList.remove('active');
     nav.classList.remove('active');
+
  })
 
 /////////////////
